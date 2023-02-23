@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { validate } from "../Validate";
+import { validate } from "../Validate/Validate";
 import "./GetInTouchForm.css";
 
 export default function GetInTouchForm() {

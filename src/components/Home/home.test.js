@@ -1,6 +1,6 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Home from "./Home";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import carousel_1 from "../../Assets/images/carousel_1.jpg";
 import carousel_2 from "../../Assets/images/carousel_2.jpg";
 import carousel_3 from "../../Assets/images/carousel_3.jpg";
@@ -56,4 +56,3 @@ test("should render buttons in Home component", () => {
   expect(buttons[1]).toContainElement(screen.getByTestId("btn-contact"));
   expect(screen.getByTestId("btn-soon")).toHaveTextContent("Comming Soon..");
 });
-

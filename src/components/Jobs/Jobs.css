@@ -71,7 +71,7 @@
 }
 .job-page{
   width:82%;
-  text-align: center;
+  /* text-align: center; */
 }
 @media (max-width:855px)
 {

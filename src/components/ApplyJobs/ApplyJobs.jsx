@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ApplyJobs.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { validate } from "../Validate";
+import { validate } from "../Validate/Validate";
 import { useDispatch, useSelector } from "react-redux";
 
 const ApplyJobs = () => {
@@ -58,22 +58,20 @@ const ApplyJobs = () => {
     }
   };
 
-  console.log(applications);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((values) => ({ ...values, [name]: value }));
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/topjobs/${id}`)
-      .then((res) => dispatch({ type: "JOB", payload: res.data }));
+      .get(`http://localhost:4000/topjobs/${id}`).then((res) => dispatch({ type: "JOB", payload: res.data }));
   }, []);
 
   const { role, company } = job;
   return (
-    <div className="apply-job">
-      <div className="container">
-        <h3 className="mb-5">
+    <div className="apply-job" data-testid="apply-job-page">
+      <div className="container" data-testid="job-desc">
+        <h3 className="mb-5" >
           You are applying for{" "}
           <span>
             <em>{role}</em>
@@ -86,14 +84,16 @@ const ApplyJobs = () => {
         </h3>
       </div>
 
-      <div>
+      <div data-testid="apply-form">
         <header className="header">
-          <h1 className="post-job">Fill the form </h1>
+          <h1 className="post-job" data-testid="form-header">
+            Fill the form{" "}
+          </h1>
         </header>
-        <form className="form">
+        <form className="form" data-testid="form">
           <div className="row">
             <div className="form-group col-sm-6">
-              <label id="name-label" for="name">
+              <label id="name-label" htmlFor="name" data-testid="form-label-name">
                 Name <i className="asterick">*</i>
               </label>
               <input
@@ -104,11 +104,16 @@ const ApplyJobs = () => {
                 placeholder="Ex: john doe"
                 onChange={handleChange}
                 required
+                data-testid="form-input-name"
               />
-              {errors.name && <p className="error-text">{errors.name}</p>}
+              {errors.name && (
+                <p className="error-text" data-testid="form-error-name">
+                  {errors.name}
+                </p>
+              )}
             </div>
             <div className="form-group col-sm-6">
-              <label id="name-label" for="email">
+              <label id="name-label"  htmlFor="email" data-testid="form-label-email">
                 Email <i className="asterick">*</i>
               </label>
               <input
@@ -119,13 +124,18 @@ const ApplyJobs = () => {
                 placeholder="johndoe@gmail.com"
                 onChange={handleChange}
                 required
+                data-testid="form-input-email"
               />
-              {errors.email && <p className="error-text">{errors.email}</p>}
+              {errors.email && (
+                <p className="error-text" data-testid="form-error-email">
+                  {errors.email}
+                </p>
+              )}
             </div>
           </div>
           <div className="row">
             <div className="form-group col-sm-4">
-              <label id="name-label" for="phone">
+              <label id="name-label"  htmlFor="phone" data-testid="form-label-phone">
                 Phone Number <i className="asterick">*</i>
               </label>
               <input
@@ -135,11 +145,20 @@ const ApplyJobs = () => {
                 className="form-control"
                 onChange={handleChange}
                 required
+                data-testid="form-input-phone"
               />
-              {errors.phone && <p className="error-text">{errors.phone}</p>}
+              {errors.phone && (
+                <p className="error-text" data-testid="form-error-phone">
+                  {errors.phone}
+                </p>
+              )}
             </div>
             <div className="form-group col-sm-8">
-              <label id="name-label" for="address">
+              <label
+                id="name-label"
+                htmlFor="address"
+                data-testid="form-label-address"
+              >
                 Address
               </label>
               <input
@@ -148,12 +167,13 @@ const ApplyJobs = () => {
                 value={address}
                 className="form-control"
                 onChange={(e) => setAddress(e.target.value)}
+                data-testid="form-input-address"
               />
             </div>
           </div>
 
           <div className="form-group">
-            <label id="name-label" for="exp">
+            <label id="name-label"  htmlFor="exp" data-testid="form-label-exp">
               Experience <i className="asterick">*</i>
             </label>
             <input
@@ -163,19 +183,30 @@ const ApplyJobs = () => {
               className="form-control"
               onChange={handleChange}
               required
+              data-testid="form-input-exp"
             />
-            {errors.exp && <p className="error-text">{errors.exp}</p>}
+            {errors.exp && (
+              <p className="error-text" data-testid="form-error-exp">
+                {errors.exp}
+              </p>
+            )}
           </div>
           <div className="form-group">
-            <label>Resume</label>
+            <label data-testid="form-label-resume">Resume</label>
 
-            <input type="file" id="myFile" name="filename" />
+            <input
+              type="file"
+              id="myFile"
+              name="filename"
+              data-testid="form-input-resume"
+            />
           </div>
           <div className="form-group">
             <button
               type="submit"
               className="submit-button"
               onClick={OnformSubmit}
+              data-testid="submit-btn"
             >
               Submit
             </button>
