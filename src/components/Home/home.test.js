@@ -56,8 +56,4 @@ test("should render buttons in Home component", () => {
   expect(buttons[1]).toContainElement(screen.getByTestId("btn-contact"));
   expect(screen.getByTestId("btn-soon")).toHaveTextContent("Comming Soon..");
 });
-// test("should render social media images", () => {
-//   render(<MockHome />);
-//   const images = screen.getByTestId("images");
-//   expect(images).toBeInTheDocument();
-// });
+

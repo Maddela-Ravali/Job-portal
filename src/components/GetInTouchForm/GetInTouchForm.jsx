@@ -52,7 +52,7 @@ export default function GetInTouchForm() {
   };
 
   return (
-    <div className="contact-form">
+    <div className="contact-form" data-testid="contact-form">
       <form onSubmit={OnformSubmit}>
         <h2>Get In Touch With Us Here </h2>
         <div className="form-group">

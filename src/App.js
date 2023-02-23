@@ -4,7 +4,7 @@ import Jobs from "./components/Jobs/Jobs";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import ApplyJobs from "./components/ApplyJobs/ApplyJobs";
-import ContactUs from "./components/ContactUs/ContactUS";
+import ContactUs from "./components/ContactUs/ContactUs";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Jobs.css";
-import Filter from "../Filter";
+import Filter from "../Filter/Filter";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
