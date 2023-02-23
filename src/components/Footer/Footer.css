@@ -1,0 +1,13 @@
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
+  padding: 40px;
+  /* border: 10px solid #f7cc53; */
+  /* border-top: none; */
+  box-shadow: 0px 10px 10px inset #f7cc53;
+}
+.social-media > img {
+  width: 70px;
+}
