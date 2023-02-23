@@ -14,7 +14,7 @@ export default function ContactUs() {
           information technology, and engineering.
         </p>
       </div>
-      <div className="container">
+      <div className="address-form">
         <div className="contact-info">
           <div className="box">
             <div className="icon">

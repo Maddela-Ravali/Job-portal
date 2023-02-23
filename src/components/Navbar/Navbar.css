@@ -3,6 +3,11 @@
   padding: 0;
   font-family: "poppins";
 }
+.head-navbar {
+  padding: 1.5rem;
+  background-color: #f3db9c;
+  box-shadow: 5px 5px 10px #f7cc53;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -10,7 +15,10 @@
   color: #000;
   padding: 1rem;
   position: sticky;
-  box-shadow: 5px 5px 10px #f7cc53;
+  box-shadow: 5px 5px 10px white;
+}
+.navbar-b {
+  color: red;
 }
 
 .navbar ul {
@@ -20,10 +28,9 @@
 }
 
 .navbar ul li a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
-  color: #0000;
   font-weight: bold;
   background: linear-gradient(90deg, #6b5df2 50%, #000 0) var(--_p, 100%) / 200%
     no-repeat;

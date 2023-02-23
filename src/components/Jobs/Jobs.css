@@ -9,6 +9,7 @@
   padding: 1.4rem;
   min-height: 100px;
   align-items: center;
+  border-radius: 10px;
   background-color: #fff;
   
 }
@@ -70,12 +71,13 @@
 }
 .job-page{
   width:82%;
+  text-align: center;
 }
 @media (max-width:855px)
 {
 .job-page{
   font-size: 10px;
-    
+  margin: auto;
 }
 .job-card{
   display: flex;

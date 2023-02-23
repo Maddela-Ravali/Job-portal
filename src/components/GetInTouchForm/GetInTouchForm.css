@@ -1,17 +1,18 @@
 .contact-form {
   width: 50%;
   padding: 20px;
-  background: rgb(237, 234, 234);
+  background: white;
+  text-align: center;
 }
 .contact-form h2 {
   font-size: 30px;
-  color: #333;
+  color: rgb(244, 70, 12);
   font-weight: 500;
 }
 .contact-form .form-group {
   position: relative;
-  width: 100%;
-  margin-top: 10px;
+  width: 80%;
+  margin-top: 20px;
 }
 
 .contact-form .form-group input,
@@ -54,4 +55,10 @@
 .error-text {
   color: red;
   font-size: smaller;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+  }
 }

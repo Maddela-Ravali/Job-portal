@@ -1,1 +1,1 @@
-
+ <!-- "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"", -->

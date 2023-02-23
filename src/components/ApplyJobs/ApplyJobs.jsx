@@ -58,7 +58,7 @@ const ApplyJobs = () => {
     }
   };
 
-  console.log(applications)
+  console.log(applications);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((values) => ({ ...values, [name]: value }));
@@ -73,8 +73,15 @@ const ApplyJobs = () => {
   return (
     <div className="apply-job">
       <div className="container">
-        <h3 className="m-5">
-          You are applying for <em>{role}</em> role at <em>{company}</em>{" "}
+        <h3 className="mb-5">
+          You are applying for{" "}
+          <span>
+            <em>{role}</em>
+          </span>{" "}
+          role at{" "}
+          <span>
+            <em>{company}</em>
+          </span>{" "}
           company{" "}
         </h3>
       </div>
@@ -83,63 +90,68 @@ const ApplyJobs = () => {
         <header className="header">
           <h1 className="post-job">Fill the form </h1>
         </header>
-        <form className="w-50 m-auto">
-          <div className="form-group">
-            <label id="name-label" for="name">
-              Name <i className="asterick">*</i>
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={values.name || ""}
-              className="form-control"
-              placeholder="Ex: john doe"
-              onChange={handleChange}
-              required
-            />
-            {errors.name && <p className="error-text">{errors.name}</p>}
+        <form className="form">
+          <div className="row">
+            <div className="form-group col-sm-6">
+              <label id="name-label" for="name">
+                Name <i className="asterick">*</i>
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={values.name || ""}
+                className="form-control"
+                placeholder="Ex: john doe"
+                onChange={handleChange}
+                required
+              />
+              {errors.name && <p className="error-text">{errors.name}</p>}
+            </div>
+            <div className="form-group col-sm-6">
+              <label id="name-label" for="email">
+                Email <i className="asterick">*</i>
+              </label>
+              <input
+                type="text"
+                name="email"
+                value={values.email || ""}
+                className="form-control"
+                placeholder="johndoe@gmail.com"
+                onChange={handleChange}
+                required
+              />
+              {errors.email && <p className="error-text">{errors.email}</p>}
+            </div>
           </div>
-          <div className="form-group">
-            <label id="name-label" for="email">
-              Email <i className="asterick">*</i>
-            </label>
-            <input
-              type="text"
-              name="email"
-              value={values.email || ""}
-              className="form-control"
-              placeholder="johndoe@gmail.com"
-              onChange={handleChange}
-              required
-            />
-            {errors.email && <p className="error-text">{errors.email}</p>}
+          <div className="row">
+            <div className="form-group col-sm-4">
+              <label id="name-label" for="phone">
+                Phone Number <i className="asterick">*</i>
+              </label>
+              <input
+                type="number"
+                name="phone"
+                value={values.phone}
+                className="form-control"
+                onChange={handleChange}
+                required
+              />
+              {errors.phone && <p className="error-text">{errors.phone}</p>}
+            </div>
+            <div className="form-group col-sm-8">
+              <label id="name-label" for="address">
+                Address
+              </label>
+              <input
+                type="text"
+                name="address"
+                value={address}
+                className="form-control"
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="form-group">
-            <label id="name-label" for="phone">
-              Phone Number <i className="asterick">*</i>
-            </label>
-            <input
-              type="number"
-              name="phone"
-              value={values.phone}
-              className="form-control"
-              onChange={handleChange}
-              required
-            />
-            {errors.phone && <p className="error-text">{errors.phone}</p>}
-          </div>
-          <div className="form-group">
-            <label id="name-label" for="address">
-              Address
-            </label>
-            <input
-              type="text"
-              name="address"
-              value={address}
-              className="form-control"
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
+
           <div className="form-group">
             <label id="name-label" for="exp">
               Experience <i className="asterick">*</i>
@@ -155,10 +167,9 @@ const ApplyJobs = () => {
             {errors.exp && <p className="error-text">{errors.exp}</p>}
           </div>
           <div className="form-group">
-            <label>Upload Your Resume</label>
-            <label>
-              <input type="file" id="myFile" name="filename" />
-            </label>
+            <label>Resume</label>
+
+            <input type="file" id="myFile" name="filename" />
           </div>
           <div className="form-group">
             <button
